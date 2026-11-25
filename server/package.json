@@ -1,0 +1,11 @@
+{
+  "name": "fgo-online-server",
+  "version": "1.0.0",
+  "description": "FGO 連線伺服器：帳號、雲端存檔、配對與對戰轉送",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "ws": "^8.18.0" },
+  "license": "UNLICENSED",
+  "private": true
+}
