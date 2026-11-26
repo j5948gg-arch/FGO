@@ -264,7 +264,8 @@ function armDraft(mt) {
 function validLo(lo) {
   if (!lo || typeof lo !== 'object') return null; const n = (v, a, b) => { v = +v; return Number.isFinite(v) ? Math.min(b, Math.max(a, v)) : a; };
   const sf = lo.sf || {};
-  return { lv: Math.round(n(lo.lv, 1, 5)), sp: n(lo.sp, 0, 400), sf: { spd: n(sf.spd, 0, 200), atk: n(sf.atk, 0, 2), hp: n(sf.hp, 0, 2), np: n(sf.np, 0, 100) } };
+  return { lv: Math.round(n(lo.lv, 1, 5)), sp: n(lo.sp, 0, 400), sf: { spd: n(sf.spd, 0, 200), atk: n(sf.atk, 0, 2), hp: n(sf.hp, 0, 2), np: n(sf.np, 0, 100),
+    sh: n(sf.sh, 0, 10000), iv: Math.round(n(sf.iv, 0, 3)), acr: n(sf.acr, 0, 0.5), dd: n(sf.dd, 0, 0.5) } };   // 刻印主動效果：護盾／無敵次數／全卡爆擊率／防禦下降（上限防竄改）
 }
 function onLock(mt, seat, m) {
   if (m.st !== mt.stage || mt.locks[seat]) return;
